@@ -101,7 +101,7 @@ function buildBarChart(sample) {
         let xticks = sample_values.slice(0,10).reverse();
         let labels = otu_labels.slice(0,10).reverse();
         
-        // Set up the trace for the bar chart
+        // Set trace for the bar chart
         let trace = {
             x: xticks,
             y: yticks,
@@ -112,12 +112,12 @@ function buildBarChart(sample) {
             orientation: "h"
         };
 
-        // Setup the layout
+        // Setup layout
         let layout = {
             title: "Top 10 Operational Taxonomic Unit (OTUs)"
         };
 
-        // Call Plotly to plot the bar chart
+        // Plot the bar chart using Plotly
         Plotly.newPlot("bar", [trace], layout)
     });
 };
@@ -145,7 +145,7 @@ function buildBubbleChart(sample) {
         // Log the data to the console
         console.log(otu_ids,otu_labels,sample_values);
         
-        // Set up the trace for bubble chart
+        // Set trace for bubble chart
         let trace1 = {
             x: otu_ids,
             y: sample_values,
@@ -158,7 +158,7 @@ function buildBubbleChart(sample) {
             }
         };
 
-        // Set up the layout
+        // Set layout
         let layout = {
             title: "Bacteria Per OTU ID",
             hovermode: "closest",
@@ -166,7 +166,7 @@ function buildBubbleChart(sample) {
             yaxis: {autorange: true},
         };
 
-        // Call Plotly to plot the bubble chart
+        // Plot the bubble chart using Plotly
         Plotly.newPlot("bubble", [trace1], layout)
     });
 };
@@ -193,7 +193,7 @@ function buildGaugeChart(sample) {
         // Log the data to the console
         console.log(wfreq);
         
-        // Set up the trace for gauge chart
+        // Set trace for gauge chart
         let trace1 = {
             domain: { x: [0, 1], y: [0, 1] },
             value: wfreq,
@@ -218,17 +218,17 @@ function buildGaugeChart(sample) {
             }
         };
 
-        // Set up the layout
+        // Set layout
         let layout = {
             width: 600, height: 500, margin: { t: 0, b: 0 } 
           };
 
-        // Call Plotly to plot the bubble chart
+        // Plot the bubble chart using Plotly
         Plotly.newPlot("gauge", [trace1], layout)
     });
 };
 
-// Function that updates dashboard when sample is changed
+// Updates dashboard when sample is changed
 function optionChanged(value) { 
 
     // Log the new value
